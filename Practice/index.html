@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+  <!-- 1) Heading and Date/Time -->
+    <div>
+        <h1>Welcome to IET</h1>
+       <iframe src="demo.html"name="myframe"></iframe>
+    </div>
+
+    <!--2 Calculate table-->
+    <div>
+     <a href="calculate.html">Calculate the Table of any Number</a>
+    </div>
+
+
+    <!--3) create username-->
+    <div class="Section">
+        <h2>create username</h2>
+        <input type="text" id="firstname" placeholder="firstname">
+        <input type="text" id="lastname" placeholder="lastname">
+        <input type="number" id="age" placeholder="Age">
+
+        <Button onclick=" generateUsername()">Generate username</Button>
+
+        <p id="UsernameResult"></p>
+
+    </div>
+
+    <script>
+
+
+        function generateUsername(){
+            const f = document.getElementById("firstname").value.trim().toLowerCase();
+            const l = document.getElementById("lastname").value.trim().toLowerCase();
+         const age = document.getElementById("age").value;
+
+         if (f.length<2 || l.length<2 || !age){
+            document.getElementById('UsernameResult').innerText="enter valid data";
+            return;
+        
+        }
+        const uname=f.substring(0,2)+l.slice(-2)+age;
+        document.getElementById('UsernameResult').innerText="username:"+uname;
+        
+    
+    }
+    </script>
+    <div></div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+    input, button { margin: 5px; }
+    </style>
+</head>
+<body>
+    <h2>Multiplication Table</h2>
+    <label>Enter Number</label>
+    <input type="number" id="numInput" placeholder="Enter a number">
+    <button onclick="generateTable()">Generate Table</button>
+    <p id="errormsg" style="color:red"></p>
+    <div id="tableoutput"></div>
+
+
+    <script>
+       function generateTable()
+        {
+            const val=document.getElementById('numInput').value.trim();
+            const output=document.getElementById('tableoutput');
+            const e=document.getElementById("errormsg");
+            output.innerHTML="" ;
+            e.innerText="";
+            if(!val)
+        {
+            e.innerText=( "enter a value");
+            return;
+        }
+
+
+        const num=parseInt(val);
+        if(isNaN(num))
+        {
+            e.innerText=(" enter a number");
+        }
+
+        if (num <= 0) {
+  e.innerText = "Please enter a number greater than 0";
+  return;
+}
+
+        let tablehtml=`<h3>Table of ${num}</h3><ul>`;
+            
+            for(let i=1;i<=10;i++)
+        {
+            tablehtml += `<li>${num}X${i} = ${num*i} </li>`;
+        }   
+         tablehtml += "</ul>";
+          output.innerHTML = tablehtml;
+            
+
+        }
+    </script>
+</body>
+</html>

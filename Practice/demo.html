@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <P id="clock">
+        
+    </P>
+    <script>
+    function updateClock() {
+      const now = new Date();
+      const formatted = now.toLocaleString(); // shows date and time
+      document.getElementById("clock").innerText = formatted;
+     }
+
+    updateClock(); // initial call
+    setInterval(updateClock, 1000); 
+    // update every second
+  </script>
+</body>
+</html>
