@@ -1,0 +1,9 @@
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-core</artifactId>
+    <version>5.6.15.Final</version>
+</dependency>
+
+
+
+ uri="http://java.sun.com/jstl/core_rt"
